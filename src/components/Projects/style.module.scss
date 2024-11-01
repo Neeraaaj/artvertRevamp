@@ -1,8 +1,18 @@
+@font-face {
+    font-family: 'custom';
+    src: url('/font/blazing-hustle-italic.otf') format('opentype'),
+         url('/font/blazing-hustle.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic; /* Change to italic if it’s the italic version */
+}
+
+.header {
+    font-family: 'custom', sans-serif;
+}
+
 .projects{
     display: flex;
     align-items: center;
-    padding-left: 200px;
-    padding-right: 200px;
     flex-direction: column;
     margin-top: 300px;
 
@@ -66,7 +76,58 @@
     .cursorLabel{
         background-color: transparent;
     }
-    
-    
+
+    .anchor{
+        text-decoration: none;
+    }
+
+    .header{
+        font-size: 8vw;
+        font-weight: bolder;
+    }
+
+    @media (max-width: 1200px) {
+        .header{
+            margin-top: 2vh;
+            font-size: 4vw;
+        }
+
+        .projects{
+            margin-top: 200px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding-right: 20px;
+        margin-top: 100px; // Reduce margin
+
+        .projects{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 300px;
+        }
+        
+    }
+
+    @media (max-width: 480px) {
+
+        .body {
+            p {
+                &:nth-of-type(1) {
+                    font-size: 20px; // Further decrease font size
+                }
+                &:nth-of-type(2) {
+                    font-size: 12px; // Further decrease font size
+                }
+            }
+
+            .button {
+                width: 120px; // Adjust button size
+                height: 120px;
+                left: calc(50% - 60px); // Center the button
+            }
+        }
+    }
 }
 

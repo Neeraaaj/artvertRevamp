@@ -9,23 +9,23 @@ import Rounded from '../../common/RoundedButton';
 
 const projects = [
   {
-    title: "C2 Montreal",
-    src: "c2montreal.png",
+    title: "Promotional Murals",
+    src: "banner.jpg",
     color: "#000000"
   },
   {
-    title: "Office Studio",
-    src: "officestudio.png",
+    title: "Educational Murals",
+    src: "school-2.jpg",
     color: "#8C8C8C"
   },
   {
-    title: "Locomotive",
-    src: "locomotive.png",
+    title: "Corporate Murals",
+    src: "corporate-2.jpg",
     color: "#EFE8D3"
   },
   {
-    title: "Silencio",
-    src: "silencio.png",
+    title: "Restraunt Murals",
+    src: "restraunt-2.jpg",
     color: "#706D63"
   }
 ]
@@ -78,6 +78,7 @@ export default function Home() {
 
   return (
   <main onMouseMove={(e) => {moveItems(e.clientX, e.clientY)}} className={styles.projects}>
+    <h1 className={styles.header}>Our Work</h1>
     <div className={styles.body}>
       {
         projects.map( (project, index) => {
@@ -85,9 +86,13 @@ export default function Home() {
         })
       }
     </div>
-    <Rounded>
-      <p>More work</p>
-    </Rounded>
+      <Rounded>
+        <a href="https://www.instagram.com/mural.interior/?igsh=MW5sZnVwcWNycG80eg%3D%3D" className={styles.anchor}>
+          <p>
+             More work
+          </p>
+        </a>
+      </Rounded>
     <>
         <motion.div ref={modalContainer} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"} className={styles.modalContainer}>
             <div style={{top: index * -100 + "%"}} className={styles.modalSlider}>

@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'custom';
+    src: url('/font/blazing-hustle-italic.otf') format('opentype'),
+         url('/font/blazing-hustle.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic; /* Change to italic if it’s the italic version */
+  }
+  
+  .button p {
+    font-family: 'custom', sans-serif;
+  }  
+
 .description{
     padding-left: 200px;
     padding-right: 200px;
@@ -7,6 +19,7 @@
     .body{
         max-width: 1400px;
         display: flex;
+        flex-direction: column;
         gap: 50px;
         position: relative;
         p{
@@ -44,6 +57,7 @@
             justify-content: center;
             cursor: pointer;
             p{
+                font-family: 'custom';
                 margin: 0px;
                 font-size: 16px;
                 font-weight: 300;
@@ -56,5 +70,74 @@
         padding: 20px;
         border-radius: 40px;
         border: 1px solid grey;
+    }
+
+
+    @media (max-width: 1200px) {
+        padding-left: 100px;
+        padding-right: 100px;
+
+        .body {
+            flex-direction: column; // Stack items on smaller screens
+            align-items: center;
+
+            p {
+                &:nth-of-type(1) {
+                    font-size: 30px; // Decrease font size
+                }
+                &:nth-of-type(2) {
+                    font-size: 16px; // Decrease font size
+                }
+            }
+
+            .button {
+                left: calc(50% - 90px); // Center the button
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 100px; // Reduce margin
+
+        .body {
+            p {
+                &:nth-of-type(1) {
+                    font-size: 24px; // Further decrease font size
+                }
+                &:nth-of-type(2) {
+                    font-size: 14px; // Further decrease font size
+                }
+            }
+
+            .button {
+                width: 150px; // Adjust button size
+                height: 150px;
+                left: calc(50% - 75px); // Center the button
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding-left: 10px;
+        padding-right: 10px;
+
+        .body {
+            p {
+                &:nth-of-type(1) {
+                    font-size: 20px; // Further decrease font size
+                }
+                &:nth-of-type(2) {
+                    font-size: 12px; // Further decrease font size
+                }
+            }
+
+            .button {
+                width: 120px; // Adjust button size
+                height: 120px;
+                left: calc(50% - 60px); // Center the button
+            }
+        }
     }
 }

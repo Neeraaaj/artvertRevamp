@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'custom';
+    src: url('/font/blazing-hustle-italic.otf') format('opentype'),
+         url('/font/blazing-hustle.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic; /* Change to italic if it’s the italic version */
+}
+
+
+body{
+    font-family: 'custom', sans-serif;
+}

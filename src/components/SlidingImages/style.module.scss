@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'custom';
+    src: url('/font/blazing-hustle-italic.otf') format('opentype'),
+         url('/font/blazing-hustle.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic; /* Change to italic if it’s the italic version */
+}
+
+.header {
+    font-family: 'custom', sans-serif;
+}
+
+
 .slidingImages{
     display: flex;
     flex-direction: column;
@@ -18,18 +31,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 50px;
             .imageContainer{
                 position: relative;
-                width: 80%;
-                height: 80%;
+                width: 100%;
+                height: 100%;
+                border-radius: 50px;
                 img{
+                    width: fit-content;
+                    height: fit-content;
                     object-fit: cover;
+                    border-radius: 50px;
+                    box-shadow: 1px 5px 10px 1px grey;
                 }
             }
         }
     }
     .circleContainer{
-        background-color: red;
         position: relative;
         margin-top: 100px;
         .circle{
@@ -42,5 +60,11 @@
             position: absolute;
             box-shadow: 0px 60px 50px rgba(0, 0, 0, 0.748);
         }
+    }
+
+    .header{
+        font-size: 10vw;
+        text-align: center;
+        margin: auto;
     }
 }

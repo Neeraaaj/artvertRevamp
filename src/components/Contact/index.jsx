@@ -2,7 +2,7 @@ import styles from './style.module.scss';
 import Image from 'next/image';
 import Rounded from '../../common/RoundedButton';
 import { useRef } from 'react';
-import { useScroll, motion, useTransform, useSpring } from 'framer-motion';
+import { useScroll, motion, useTransform, useSpring, color } from 'framer-motion';
 import Magnetic from '../../common/Magnetic';
 
 export default function index() {
@@ -23,7 +23,8 @@ export default function index() {
                             <Image 
                             fill={true}
                             alt={"image"}
-                            src={`/images/background.jpg`}
+                            src={`/images/Logo1.png`}
+                            className={styles.img}
                             />
                         </div>
                         <h2>Let's work</h2>
@@ -40,28 +41,20 @@ export default function index() {
                 </div>
                 <div className={styles.nav}>
                         <Rounded>
-                            <p>info@dennissnellenberg.com</p>
+                            <p>info@muralinterior.in</p>
                         </Rounded>
                         <Rounded>
-                            <p>+31 6 27 84 74 30</p>
+                            <p>+91 9892110142</p>
                         </Rounded>
                 </div>
                 <div className={styles.info}>
                     <div>
                         <span>
-                            <h3>Version</h3>
-                            <p>2022 © Edition</p>
-                        </span>
-                        <span>
-                            <h3>Version</h3>
-                            <p>11:49 PM GMT+2</p>
-                        </span>
-                    </div>
-                    <div>
-                        <span>
                             <h3>socials</h3>
                             <Magnetic>
-                                <p>Awwwards</p>
+                                <a href="https://www.instagram.com/mural.interior/?igsh=MW5sZnVwcWNycG80eg%3D%3D" style={{textDecoration: 'none', color: 'white'}}>
+                                    <p>Instagram</p>
+                                </a>
                             </Magnetic>
                         </span>
                         <Magnetic>

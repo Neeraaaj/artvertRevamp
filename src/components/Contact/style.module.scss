@@ -6,6 +6,7 @@
     justify-content: center;
     background-color: #141516;
     position: relative;
+    margin-top: 100px;
     .body{
         padding-top: 200px;
         width: 100%;
@@ -27,7 +28,7 @@
                     position: relative;
                     border-radius: 50%;
                     overflow: hidden;
-
+                    background-color: white;
                     img{
                         object-fit: cover;
                     }

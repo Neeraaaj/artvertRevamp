@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'custom';
+  src: url('/font/blazing-hustle-italic.otf') format('opentype'),
+       url('/font/blazing-hustle.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic; /* Change to italic if it’s the italic version */
+}
+
+.slider p {
+  font-family: 'custom', sans-serif;
+}
+
 .landing{
     position: relative;
     display: flex;
@@ -20,10 +32,10 @@
     
     .slider p{
       position: relative;
-      margin: 0px;
+      margin: 30px;
       color: white;
       font-size: 230px;
-      font-weight: 500;
+      font-weight: 800;
       padding-right: 50px;
     }
     
@@ -43,11 +55,31 @@
       p{
         margin: 0px;
         margin-bottom: 10px;
+        background-color: black;
+        color: white;
+        padding: 2vw;
+        border-radius: 100px;
       }
       svg{
         transform: scale(2);
         margin-bottom: 100px;
       }
+    }
+
+    @media (max-width: 1200px) {
+      .description p{
+        font-size: small;
+        padding: 25px;
+        width: 50%;
+      }
+  }
+
+  @media (max-width: 768px) {
+      
+  }
+
+    @media (max-width: 480px) {
+      
     }
   }
   
