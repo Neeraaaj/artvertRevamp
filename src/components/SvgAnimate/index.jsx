@@ -93,7 +93,7 @@ export default function SvgAnimate() {
             <div className={`relative h-[100vh] flex justify-center items-center`}>
                 <div id="bg_city" className={`${styles.bg_city} h-[100vh]`}></div>
 
-                <div className={`${styles.text_content} absolute inset-0 flex flex-col justify-center items-center space-y-8`}>
+                <div className={`${styles.text_content} absolute inset-0 flex flex-col justify-center items-center space-y-8 mt-20`}>
                     <h1 id="text_1" className="opacity-0 text-4xl lg:text-7xl font-bold font-mono">
                         We start by identifying the best location for your mural, ensuring maximum impact and engagement.                    
                     </h1>
