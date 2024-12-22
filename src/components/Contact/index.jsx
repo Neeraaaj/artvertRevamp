@@ -4,6 +4,7 @@ import Rounded from '../../common/RoundedButton';
 import { useRef } from 'react';
 import { useScroll, motion, useTransform } from 'framer-motion';
 import Magnetic from '../../common/Magnetic';
+import Link from 'next/link';
 
 export default function Index() {  // Changed from index to Index
     const container = useRef(null);
@@ -31,10 +32,12 @@ export default function Index() {  // Changed from index to Index
                         </div>
                         <h2>Let&apos;s work</h2> 
                     </span>
-                    <h2>together</h2>
+                    <h2 className='text-center'>Together</h2>
                     <motion.div style={{ x }} className={styles.buttonContainer}>
                         <Rounded backgroundColor="#334BD3" className={styles.button}>
-                            <p>Get in touch</p>
+                            <Link href={"/quote"}>
+                                <p>Get in touch</p>
+                            </Link>
                         </Rounded>
                     </motion.div>
                     <motion.svg style={{ rotate, scale: 2 }} width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,12 +45,12 @@ export default function Index() {  // Changed from index to Index
                     </motion.svg>
                 </div>
                 <div className={styles.nav}>
-                    <Rounded>
+                    <div>
                         <p>info@muralinterior.in</p>
-                    </Rounded>
-                    <Rounded>
+                    </div>
+                    <div>
                         <p>+91 9892110142</p>
-                    </Rounded>
+                    </div>
                 </div>
                 <div className={styles.info}>
                     <div>
@@ -59,12 +62,8 @@ export default function Index() {  // Changed from index to Index
                                 </a>
                             </Magnetic>
                         </span>
-                        <Magnetic>
-                            <p>Instagram</p>
-                        </Magnetic>
-                        <Magnetic>
-                            <p>Dribbble</p>
-                        </Magnetic>
+                        
+                        
                         <Magnetic>
                             <p>Linkedin</p>
                         </Magnetic>
