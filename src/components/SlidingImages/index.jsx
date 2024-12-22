@@ -58,7 +58,7 @@ export default function Index() {
             <motion.div style={{ x: x1 }} className={styles.slider}>
                 {slider1.map((project, index) => (
                     <div key={index} className={styles.project} style={{ backgroundColor: project.color }}>
-                        <div className={styles.imageContainer}>
+                        <div className={`${styles.imageContainer} rounded-sm lg:rounded-lg`}>
                             <Image fill={true} alt={"image"} src={`/images/${project.src}`} />
                         </div>
                     </div>

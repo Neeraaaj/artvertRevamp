@@ -8,6 +8,7 @@ import Projects from '../components/Projects';
 import Description from '../components/Description';
 import SlidingImages from '../components/SlidingImages';
 import Contact from '../components/Contact';
+import SvgAnimate from '@/components/SvgAnimate';
 
 export default function Home() {
 
@@ -36,6 +37,7 @@ export default function Home() {
       <Landing />
       <Description />
       <Projects />
+      <SvgAnimate />
       {/* <Services /> */}
       <SlidingImages />
       <Contact />
