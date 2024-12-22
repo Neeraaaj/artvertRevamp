@@ -18,7 +18,7 @@ export default function Index() {  // Changed from index to Index
     const rotate = useTransform(scrollYProgress, [0, 1], [120, 90]);
 
     return (
-        <motion.div style={{ y }} ref={container} className={styles.contact}>
+        <motion.div style={{ y }} ref={container} className={`${styles.contact} mt-[50vh] lg:mt-[5vh]`}>
             <div className={styles.body}>
                 <div className={styles.title}>
                     <span>
