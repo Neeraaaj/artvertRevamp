@@ -16,6 +16,9 @@ export const config = {
   },
 };
 
+// Define runtime configuration
+export const runtime = 'nodejs'; // Use 'edge' if the function needs to be serverless and lightweight
+
 // export async function POST(req) {
   
 //   try {
