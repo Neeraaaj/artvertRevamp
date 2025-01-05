@@ -9,6 +9,9 @@ import Description from '../components/Description';
 import SlidingImages from '../components/SlidingImages';
 import Contact from '../components/Contact';
 import SvgAnimate from '@/components/SvgAnimate';
+import StickyMouse from '@/components/StickyMouse';
+import { HeroParallax } from '@/components/RecentWork';
+import { products } from '@/common/Products';
 
 export default function Home() {
 
@@ -30,7 +33,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main>
+    <main className='h-[fit-content]'>
       <AnimatePresence mode='wait'>
         {isLoading && <Preloader />}
       </AnimatePresence>
@@ -39,7 +42,8 @@ export default function Home() {
       <Projects />
       <SvgAnimate />
       {/* <Services /> */}
-      <SlidingImages />
+      {/* <SlidingImages /> */}
+      <HeroParallax products={products}/>
       <Contact />
     </main>
   )
