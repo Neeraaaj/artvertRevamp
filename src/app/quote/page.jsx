@@ -22,7 +22,8 @@ export default function Page() {
         try {
             await axios.post(
                 // 'http://localhost:3000/api/mail',  // Your Next.js API route
-                'https://muralinterior.com/api/mail',
+                // 'https://muralinterior.com/api/mail',
+                `${window.location.origin}/api/mail`,
                 formData,  // Send form data
                 {
                     headers: {
