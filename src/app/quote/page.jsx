@@ -13,11 +13,7 @@ export default function Page() {
         const formData = new FormData(event.target); // Get form data
         const data = Object.fromEntries(formData.entries()); // Convert it to a plain object
     
-        // Debugging FormData content
         console.log(data);
-        // for (let [key, value] of formData.entries()) {
-        //     console.log(`${key}:`, value); // Logs both text fields and File objects
-        // }
     
         try {
             await axios.post(
