@@ -8,58 +8,38 @@ import Image from 'next/image';
 export default function Page() {
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log('inside the handleSubmit')
-        console.log(event);
-        console.log(event.target);
-
-        const formData = new FormData(event.target);
-        const data = Object.fromEntries(formData.entries());
-
+        console.log('inside the handleSubmit');
+    
+        const formData = new FormData(event.target); // Get form data
+        const data = Object.fromEntries(formData.entries()); // Convert it to a plain object
+    
+        // Debugging FormData content
         console.log(data);
-
-        // Send email using Resend API to a fixed recipient
+        // for (let [key, value] of formData.entries()) {
+        //     console.log(`${key}:`, value); // Logs both text fields and File objects
+        // }
+    
         try {
             await axios.post(
-                'http://localhost:5000/send-email',
-                {
-                    from: 'onboarding@resend.dev',  // Replace with your verified email
-                    to: 'patilneeraj2003@gmail.com', // Replace with the fixed recipient's email
-                    subject: 'New Mural Quotation Request',
-                    html: `
-                        <h2>Mural Quotation Request Details</h2>
-                        <p><strong>Name:</strong> ${data.name}</p>
-                        <p><strong>Email:</strong> ${data.email}</p>
-                        <p><strong>Project Type:</strong> ${data.project_type}</p>
-                        <p><strong>Mural Type:</strong> ${data.mural_type}</p>
-                        <p><strong>Number of Walls:</strong> ${data.number_of_walls}</p>
-                        <p><strong>Maximum Budget:</strong> ${data.max_budget}</p>
-                        <p><strong>Project Details:</strong> ${data.project_details}</p>
-                        <p><strong>Contact Number:</strong> ${data.contact_number}</p>
-                        <p>...other details...</p>
-                    `,
-                },
+                // 'http://localhost:3000/api/mail',  // Your Next.js API route
+                'https://muralinterior.com/api/mail',
+                formData,  // Send form data
                 {
                     headers: {
-                        Authorization: `Bearer re_2hBJK6Zm_DNit8r9uSVdmWGezR7YpVbV`,  
-                        'Content-Type': 'application/json',
+                        // 'Content-Type': 'application/json',  // Ensure correct headers for JSON
+                        'Content-Type': 'multipart/form-data'
                     },
                 }
             );
             alert('Email sent successfully!');
+            setTimeout(() => {
+                form.reset();  // Clear all form fields
+            }, 1000);
         } catch (error) {
             console.log(error);
             alert('Error sending email:', error);
-            return;
         }
-
-        // Generate Excel file
-        const ws = XLSX.utils.json_to_sheet([data]);
-        const wb = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(wb, ws, 'Quotations');
-        XLSX.writeFile(wb, 'Quotations.xlsx');
-
-        alert('Excel file generated successfully!');
-    };
+    };    
 
     return (
         <section className="bg-white">
@@ -116,7 +96,7 @@ export default function Page() {
                             {/* Image Upload */}
                             <div className="col-span-6">
                                 <label className="block text-sm font-medium text-gray-700">Attach Reference Images</label>
-                                <input type="file" accept="image/*" multiple className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" />
+                                <input type="file" name="reference_images" accept="image/*" multiple className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" />
                                 <p className="mt-2 text-sm text-gray-500">Please upload any reference images you have including images of the walls, design ideas, floor plan (wall sizes), and anything else to help us with your project.</p>
                             </div>
 

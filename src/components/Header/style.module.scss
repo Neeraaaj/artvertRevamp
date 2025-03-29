@@ -110,6 +110,12 @@
         align-items: center;
         justify-content: center;
     }
+    @media (max-width: 768px) {
+        .button {
+            // left: -50%; /* Adjust for smaller devices */
+            margin-top: 80%;
+        }
+    }
     
     .burger{
         width: 100%;
@@ -149,4 +155,5 @@
         
     }
 }
+
 
